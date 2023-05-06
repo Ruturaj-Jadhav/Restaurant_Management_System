@@ -10,7 +10,7 @@ const connectWithDB = require('./config/db');
 // Import Routes
  
 const indexWebroutes = require('./routes/web/index')
-const userAuthroutes = require("./routes/web/userauthentication")
+const userAuthroutes = require("./routes/web/authorizationRoutes")
 const paymentWebRoutes = require('./routes/web/paymentRoutes');
 const cartWebroutes = require('./routes/web/cartRoutes');
 const qrcodeWebRoutes = require('./routes/web/qrRoutes');
