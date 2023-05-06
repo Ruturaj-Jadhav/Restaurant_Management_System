@@ -95,10 +95,6 @@ router.post('/menu' , async (req,res)=>{
   var item =  req.body.dishh
   var price = req.body.price
   const user = await Usermodel.findOne({username}).lean()
-
-
-  
-
  await Usermodel.findOneAndUpdate({username : username} , {
     $push : {
       menu : {

@@ -1,7 +1,7 @@
 // Imports
 const express = require("express");
 const localStorage = require("local-storage");
-const Usermodel = require("../models/user.model");
+const Usermodel = require("../../models/user.model");
 
 // View menu for the given restaurant
 exports.viewmenu = async (req, res) => {

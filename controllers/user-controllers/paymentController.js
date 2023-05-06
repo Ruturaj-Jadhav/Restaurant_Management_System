@@ -1,11 +1,11 @@
 // Imports
 var express = require('express');
 const Razorpay = require('razorpay')
-const PaymentDetail = require('../models/payment-detail')
+const PaymentDetail = require('../../models/payment-detail')
 const {nanoid} = require("nanoid");
-const orderDetail = require('../models/order-details');
+const orderDetail = require('../../models/order-details');
 const localStorage = require('local-storage');
-const paymentDetail = require('../models/payment-detail');
+const paymentDetail = require('../../models/payment-detail');
 
 // Create an instance of RazorPay
 

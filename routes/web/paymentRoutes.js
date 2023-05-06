@@ -1,7 +1,7 @@
 // Imports
 var express = require('express');
 var router = express.Router();
-const paymentController = require('../../controllers/paymentController');
+const paymentController = require('../../controllers/user-controllers/paymentController');
 
 // Define routes
 

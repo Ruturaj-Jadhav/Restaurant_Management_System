@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const orderDetailSchema = new mongoose.Schema({
-    restaurantId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false},
+    restaurantId: { type: mongoose.Schema.Types.ObjectId, ref: 'user.model', required: false},
     orderId : {
         type : 'string',
         required : true
@@ -31,7 +31,6 @@ const orderDetailSchema = new mongoose.Schema({
             }
         }
     ] 
-   // restaurantId: { type: Schema.Types.ObjectId, ref: 'user.model', required: true }
 
 })
 

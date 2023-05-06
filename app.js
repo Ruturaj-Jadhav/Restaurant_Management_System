@@ -14,7 +14,7 @@ const userAuthroutes = require("./routes/web/userauthentication")
 const paymentWebRoutes = require('./routes/web/paymentRoutes');
 const cartWebroutes = require('./routes/web/cartRoutes');
 const qrcodeWebRoutes = require('./routes/web/qrRoutes');
-const viewTableWebRoutes = require('./routes/web/viewtable');
+const viewTableWebRoutes = require('./routes/web/viewtableRoutes');
 
 
 // Create an instance of express app
@@ -44,7 +44,7 @@ connectWithDB();
 
 // Web Routes
 
-app.use("/" , userAuthroutes); // user auth routes
+app.use("/" , userAuthroutes); 
 app.use("/viewmenu",indexWebroutes);
 app.use('/payment', paymentWebRoutes);
 app.use('/cart' ,cartWebroutes);
