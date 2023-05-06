@@ -13,7 +13,7 @@ const indexWebroutes = require('./routes/web/index')
 const userAuthroutes = require("./routes/web/userauthentication")
 const paymentWebRoutes = require('./routes/web/paymentRoutes');
 const cartWebroutes = require('./routes/web/cartRoutes');
-const qrcodeWebRoutes = require('./routes/web/scan');
+const qrcodeWebRoutes = require('./routes/web/qrRoutes');
 const viewTableWebRoutes = require('./routes/web/viewtable');
 
 
