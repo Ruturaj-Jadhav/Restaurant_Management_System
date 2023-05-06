@@ -11,8 +11,8 @@ const connectWithDB = require('./config/db');
  
 const indexWebroutes = require('./routes/web/index')
 const userAuthroutes = require("./routes/web/userauthentication")
-const paymentWebRoutes = require('./routes/web/payments');
-const cartWebroutes = require('./routes/web/cart');
+const paymentWebRoutes = require('./routes/web/paymentRoutes');
+const cartWebroutes = require('./routes/web/cartRoutes');
 const qrcodeWebRoutes = require('./routes/web/scan');
 const viewTableWebRoutes = require('./routes/web/viewtable');
 

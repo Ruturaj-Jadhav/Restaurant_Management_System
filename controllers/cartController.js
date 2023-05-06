@@ -1,18 +1,13 @@
+// Imports
 const express = require("express");
-
-var router = express.Router();
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
 const localStorage = require("local-storage");
-const JWT_SECRET = process.env.JWT_SECRET;
-const swal = require("sweetalert");
 
+// Add items to the cart
+exports.addToCart =  async (req, res) => {
 
-const Usermodel = require("../../models/user.model");
-const { appendFile } = require("fs");
-router.post("/orders", async (req, res) => {
-       const Restaurant = localStorage.get('restaurantData');
+      // Get Restaurant Data to redirect back once item is added to cart
+      const Restaurant = localStorage.get('restaurantData');
+
       var cart = JSON.parse(localStorage.get("cart") || "[]");
 
       // Calculate the total price and add the new dish to the cart
@@ -22,25 +17,26 @@ router.post("/orders", async (req, res) => {
       // Store the updated cart in local storage
       localStorage.set("cart", JSON.stringify(cart));
 
-      
-
-
+      // Redirect back to menu page
       res.redirect(`/scan/${Restaurant.restaurant}/${Restaurant.table}/viewmenu`);
   
-});
+};
 
-router.get("/checkout", (req, res) => {
+// Checkout cart
+exports.checkoutCart =  (req, res) => {
   // Check if cart exists in session
   if (!localStorage.get("cart")) {
     req.session.cart = [];
   }
 
-  // Render cart view with items and total price
+  // Get the cart stored in the local storage
   const itemsString = localStorage.get("cart");
   const items = JSON.parse(itemsString);
+  
+  // Calculate the total amount of items in the cart
   var totalPrice = items.reduce((total, item) => Number(total) + Number(item.price), 0);
 
+  // Render cart view with items and total price
   res.render("cart", { dishes: items, totalPrice: totalPrice });
-});
+};
 
-module.exports = router;
