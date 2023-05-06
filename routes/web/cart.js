@@ -6,19 +6,13 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const localStorage = require("local-storage");
 const JWT_SECRET = process.env.JWT_SECRET;
+const swal = require("sweetalert");
+
 
 const Usermodel = require("../../models/user.model");
 const { appendFile } = require("fs");
-
-var router = express.Router();
-
 router.post("/orders", async (req, res) => {
-  const token = localStorage.get("jwt");
-
-  jwt.verify(token, JWT_SECRET, async (err, decodedToken) => {
-    if (err) {
-      return res.status(401).json({ message: "Unauthorized" });
-    } else {
+       const Restaurant = localStorage.get('restaurantData');
       var cart = JSON.parse(localStorage.get("cart") || "[]");
 
       // Calculate the total price and add the new dish to the cart
@@ -28,11 +22,11 @@ router.post("/orders", async (req, res) => {
       // Store the updated cart in local storage
       localStorage.set("cart", JSON.stringify(cart));
 
-      console.log(localStorage.get("cart"));
+      
 
-      res.redirect("/viewmenu");
-    }
-  });
+
+      res.redirect(`/scan/${Restaurant.restaurant}/${Restaurant.table}/viewmenu`);
+  
 });
 
 router.get("/checkout", (req, res) => {

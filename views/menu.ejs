@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/menu.css">
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 </head>
 
 <body>
@@ -50,6 +51,8 @@
   <script>
   
     function handlePayment(amount , dish) {
+      
+      
       const form = document.createElement('form');
       form.setAttribute('method', 'POST');
       form.setAttribute('action', '/cart/orders');
@@ -70,6 +73,7 @@
 
       form.appendChild(amountInput);
       form.appendChild(dishInput);
+
 
       document.body.appendChild(form);
       form.submit();

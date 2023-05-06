@@ -4,11 +4,8 @@ if(process.env.NODE_ENV !== 'production'){
 }
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
-const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const jwt = require("jsonwebtoken");
-const localStorage = require("local-storage");
-const JWT_SECRET = process.env.JWT_SECRET;
+const connectWithDB = require('./config/db');
 
 // Import Routes
  
@@ -17,6 +14,7 @@ const userAuthroutes = require("./routes/web/userauthentication")
 const paymentWebRoutes = require('./routes/web/payments');
 const cartWebroutes = require('./routes/web/cart');
 const qrcodeWebRoutes = require('./routes/web/scan');
+const viewTableWebRoutes = require('./routes/web/viewtable');
 
 
 // Create an instance of express app
@@ -40,10 +38,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Connect to MongoDB
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('[STATUS] Connected to Database'))
+
+connectWithDB();
+
 
 // Web Routes
 
@@ -52,6 +49,7 @@ app.use("/viewmenu",indexWebroutes);
 app.use('/payment', paymentWebRoutes);
 app.use('/cart' ,cartWebroutes);
 app.use('/scan' ,qrcodeWebRoutes);
+app.use('/view' , viewTableWebRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,7 +57,6 @@ app.use(function(req, res, next) {
 	err.status = 404;
 	next(err);
 });
-// Use session for storing cart items
 
 // error handler
 app.use(function(err, req, res, next) {

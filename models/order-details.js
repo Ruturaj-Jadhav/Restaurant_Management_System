@@ -14,6 +14,13 @@ const orderDetailSchema = new mongoose.Schema({
         type : 'number',
         required : true
     },
+    status : {
+        type : 'String',
+        default : 'Pending'
+    },
+    table_no : {
+        type : 'Number'
+    },
     menu : [
         {
             dish :{
@@ -23,7 +30,9 @@ const orderDetailSchema = new mongoose.Schema({
                 type : Number
             }
         }
-    ]
+    ] 
+   // restaurantId: { type: Schema.Types.ObjectId, ref: 'user.model', required: true }
+
 })
 
 const orderDetail = mongoose.model('orderDetail', orderDetailSchema);
