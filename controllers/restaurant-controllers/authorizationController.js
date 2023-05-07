@@ -51,11 +51,14 @@ exports.login = async (req, res) => {
   const password = req.body.password;
 
   // Check if restaurant is present in the database
-  const user = await Usermodel.findOne({ username }).lean();
+  const user = await Usermodel.findOne({ username });
 
   if (!user) {
     return res.json({ status: "error", error: "User not found" });
   }
+  
+  // Coverts the document from monogoDB document to plain javascript object to increase performance and reduce memory usage
+  user = user.lean();
 
   // Compare the password against the password provided in  the request
   if (await bcrypt.compare(password, user.password)) {
