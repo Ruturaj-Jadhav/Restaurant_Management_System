@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/restaurantHomePage.css">
+    <title>RESTAURANT</title>
+  </head>
+  <body>
+    <div class="page">
+    <div class="name">
+        <img class="logo" alt="log" src="https://marketplace.canva.com/EAESMsqG9rI/3/0/1600w/canva-grey-%26-green-elegant-minimal-good-taste-food-restaurant-logo-jeSR74GRMC8.jpg" />
+        <h1 class="name_m">SATVEEK RESTAURANT</h1>
+    </div>
+    <!-- <div class="slide-container">
+            <div class="react-slideshow">
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1600px; background-image: url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80');"></div>
+                </div>
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1400px; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80');"></div>
+                </div>
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1400px; background-image: url('https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80');"></div>
+                </div>
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1400px; background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80');"></div>
+                </div>
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1400px; background-image: url('https://images.unsplash.com/photo-1488992783499-418eb1f62d08?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1289&amp;q=80');"></div>
+                </div>
+            </div>
+        
+    </div> -->
+
+    <div class="slideshow-container">
+        <img style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1520px; class="slide" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80" alt="Slide 2">
+        <!-- <img style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1520px; class="slide" src="https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80" alt="Slide 3">
+        <img style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1520px; class="slide" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" alt="Slide 4">
+        <img style="display: flex; align-items: center; justify-content: center; background-size: cover; height: 700px; width: 1520px; class="slide" src="https://images.unsplash.com/photo-1488992783499-418eb1f62d08?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1289&amp;q=80" alt="Slide 5"> -->
+    </div>
+
+      <script>
+    
+        const interval = 3000;
+    
+       const slides = document.getElementsByClassName('slide');
+       let currentSlide = 0;
+    
+       
+       function showNextSlide() {
+         slides[currentSlide].style.display = 'none';
+         currentSlide = (currentSlide + 1) % slides.length;
+         slides[currentSlide].style.display = 'block';
+       }
+    
+     
+       setInterval(showNextSlide, interval);
+     </script>
+    
+    <div class="Menu">
+        <h1>Our Services</h1>
+        <div class="box">
+            <div class="box1 b">
+                <img src="https://t4.ftcdn.net/jpg/02/72/65/95/240_F_272659528_4BeXAVkr69LHfeTMEaEaVEFBco5ooFYj.jpg" />
+                <h2>Display menu</h2>
+                <p>You can see the menu of our restaurant here. When the restaurant uploads a new dish, it automatically updates here.</p>
+            </div>
+            <div class="box2 b">
+                <img src="https://image.freepik.com/free-vector/menu-logo_8496-118.jpg" />
+                <h2>Add menu</h2>
+                <p>Restaurants can add their new dishes according to their type.</p>
+            </div>
+            <div class="box3 b">
+                <img src="https://thumbs.dreamstime.com/b/table-icon-trendy-table-logo-concept-white-background-f-table-icon-trendy-table-logo-concept-white-background-131141638.jpg" />
+                <h2>View Tables</h2>
+                <p>Restaurant staff can see the orders according to the table number. They can also check the status of that table.</p>
+            </div>
+            <div class="box4 b">
+                <img src="https://thumbs.dreamstime.com/b/food-delivery-logo-template-vector-icon-illustration-170869600.jpg" />
+                <h2>Previous Orders</h2>
+                <p>You can check out the previous orders.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  </body>
+  
+</html>

@@ -7,6 +7,13 @@ const localStorage = require("local-storage");
 const JWT_SECRET = process.env.JWT_SECRET;
 const Usermodel = require("../../models/user.model");
 
+
+
+// Render Home page for restaurant
+exports.homePage = (req,res) => {
+     res.render('homePage');
+};
+
 // Render restaurant registration page
 exports.registerPage = (req, res) => {
   const filePath = path.join(__dirname, "..", "..", "public","html", "register.html");
@@ -77,31 +84,10 @@ exports.login = async (req, res) => {
     localStorage.set("jwt", token);
 
     // Render restaurant view
-    res.render("restaurantview");
+    res.render("restaurantHomePage");
   } else {
     res.json({ status: "error", error: "Invalid Password" });
   }
 };
 
-// Add items to the restaurant menu
-exports.addMenuItems = async (req, res) => {
-  var item = req.body.dishh;
-  var price = req.body.price;
 
-  // Find and update menu items for selected restaurant
-
-  await Usermodel.findOneAndUpdate(
-    { username: req.user.username },
-    {
-      $push: {
-        menu: {
-          dish: item.toUpperCase(),
-          price: price,
-        },
-      },
-    }
-  );
-
-  // Render restaurant view
-  res.render("restaurantview");
-};

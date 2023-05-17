@@ -1,0 +1,78 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.page{
+    display: flex;
+}
+
+.page>.add_menu{
+    border: 2px solid gray;
+    background-color: whitesmoke;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 10px;
+    transition: width 2ms;
+}
+
+.page>.add_menu:hover{
+    width: 420px;
+    /* height: 410px; */
+}
+
+.page>.add_menu>h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
+.page>.add_menu>.sub{
+    margin-left: 20px;
+    margin-top: 35px;
+    display: flex;
+}
+
+.page>.add_menu>.sub>h3{
+    font-size: 20px;
+}
+
+.page>.add_menu>.sub>.search_input{
+    margin-left: 12px;
+    width: 218px;
+    border: 2px solid gray;
+}
+
+.page>.add_menu>.sub>.search_dish{
+    margin-left: 65px;
+    width: 218px;
+    border: 2px solid gray;
+}
+
+.page>.add_menu>.sub>.search_me{
+    margin-left: 29px;
+    width: 218px;
+    border: 2px solid gray;
+}
+
+.page>.add_menu>.btn{
+    padding: 11px 40px;
+    font-size: 15px;
+    border-radius: 7px;
+    /* font-weight: bold; */
+    border: 2px solid white;
+    background-color: rgb(3, 88, 3);
+    color: white;
+    margin: auto;
+}
+
+.page>.add_menu>.btn:hover{
+    cursor: pointer;
+    background-color: rgb(2, 67, 2);
+    box-shadow:5px 5px 5px 5px gray;
+}

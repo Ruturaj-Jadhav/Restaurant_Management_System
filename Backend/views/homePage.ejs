@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/homePage.css">
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div class="main">
+    <div class="navbar">
+        <img class="logo" src="https://p.kindpng.com/picc/s/57-575266_restaurants-clipart-greeter-logo-for-restaurant-hd-hd.png" />
+        <p class="web_name">eatery</p>
+        <div class="nav-items">
+            <ul>
+                <li>Home</li>
+                <li>Services</li>
+                <li>Contact us</li>
+            </ul>
+        </div>
+         <button onclick="location.href = 'http://localhost:8000/login';" class="login_btn btn">Login</button>
+        <button  onclick="location.href = 'http://localhost:8000/register';" class="Sign_btn btn">Sign up</button>
+    </div>
+    <div class="back">
+        <div class="info">
+            <h1>Restaurant Table </h1>
+            <h1>Management </h1>
+            <h1>–Maximizing seating </h1>
+            <h1>capacity</h1>
+            <p class="p1">eatery's booking solution for restaurants </p>
+            <p>makes a lot of your daily business tasks </p>
+            <p> much easier, so that you can fully focus on </p>
+            <p>your guests.</p>
+        </div>
+        <img class="bi" src="https://img.freepik.com/free-photo/checking-disturbing-news-from-stock-exchange_329181-15221.jpg?w=1060&t=st=1683824145~exp=1683824745~hmac=ca69495c3db5a13a9ada79c9fa4741a6a0b32421072174761da71e89f289f7b2" />
+    </div>
+    <div class="Menu">
+        <h1>Our Services</h1>
+        <div class="box">
+            <div class="box1 b">
+                <img src="https://i.pinimg.com/originals/1c/61/94/1c6194cdf688f02dab0784fe74dca61c.jpg" />
+                <h2>QR Scanning</h2>
+                <p>Scan the QR on the table, you will get to see the restaurant menu.</p>
+            </div>
+            <div class="box2 b">
+                <img src="https://thumbs.dreamstime.com/b/table-icon-trendy-table-logo-concept-white-background-f-table-icon-trendy-table-logo-concept-white-background-131141638.jpg" />
+                <h2>Table Booking</h2>
+                <p>You can book the table online and also can see the booked tables.</p>
+            </div>
+            <div class="box3 b">
+                <img src="https://img.freepik.com/premium-vector/food-delivery-logo-with-truck-design_1447-31.jpg" />
+                <h2>Fast Food Delivery</h2>
+                <p>Our website also provides the food delivery options.</p>
+            </div>
+        </div>
+    </div>
+    <div class="contact_us">
+        <h1>Contact Us</h1>
+        <div class="line">
+            <div class="msg con">
+                <img src="https://www.lincolnelectric.com/en-us/support/publishingimages/icons-contact.jpg" />
+                <a href="gmail.com ">Email<br/></a>
+                <p>We will respond to your email inquiry within 24 hours.</p>
+            </div>
+            <div class="live_chat con">
+                <img src="https://www.lincolnelectric.com/en-us/support/publishingimages/icons-contact-live-chat.jpg" />
+                <a href="Live Chat">Live Chat<br/></a>
+                <p>Chat with us 8am - 5pm EST</p>
+            </div>
+            <div class="call con">
+                <img src="https://www.lincolnelectric.com/en-us/support/publishingimages/icons-phone.jpg" />
+                <a href="9307700684">9307700684<br/></a>
+                <p>Customer Service for more information</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  function registerPage(){
+     window.location.href("http://localhost:8000/register");
+   }
+   
+   function loginPage(){
+     window.location.href("http://localhost:8000/login");
+   } 
+</script>
+  </body>
+</html>

@@ -5,7 +5,10 @@ const authMiddleware = require('../../middlewares/authMiddleware');
 var router = express.Router();
 
 // Routes
-router.get('/' , authorizationController.registerPage);
+
+router.get('/' , authorizationController.homePage);
+
+router.get('/register' , authorizationController.registerPage);
 
 router.get('/login', authorizationController.loginPage);
 
