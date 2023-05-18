@@ -14,7 +14,7 @@ const userAuthroutes = require("./routes/web/authorizationRoutes")
 const paymentWebRoutes = require('./routes/web/paymentRoutes');
 const cartWebroutes = require('./routes/web/cartRoutes');
 const qrcodeWebRoutes = require('./routes/web/qrRoutes');
-const restaurantWebRoutes = require('./routes/web/restaurantRoutes');
+const restaurantWebRoutes = require('./routes/web/restaurantRoutes')
 
 
 // Create an instance of express app
@@ -49,7 +49,8 @@ app.use("/viewmenu",indexWebroutes);
 app.use('/payment', paymentWebRoutes);
 app.use('/cart' ,cartWebroutes);
 app.use('/scan' ,qrcodeWebRoutes);
-app.use('/restuarant' , restaurantWebRoutes);
+app.use('/restaurant' , restaurantWebRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

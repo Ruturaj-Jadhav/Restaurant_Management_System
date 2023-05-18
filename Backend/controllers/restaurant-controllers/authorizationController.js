@@ -79,7 +79,7 @@ exports.login = async (req, res) => {
       JWT_SECRET,
       { expiresIn: "2h" }
     );
-
+     console.log(token);
     // Store the token in the local storage for later use
     localStorage.set("jwt", token);
 

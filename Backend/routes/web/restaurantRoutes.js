@@ -1,7 +1,7 @@
 // Imports
 const express = require("express");
 const router = express.Router();
-const restaurantController = require("../../controllers/restaurant-controllers/restaurantController");
+const restaurantController = require("../../controllers/restaurant-controllers/restaurantController")
 const authMiddleware = require("../../middlewares/authMiddleware");
 
 // Define routes
@@ -9,6 +9,7 @@ const authMiddleware = require("../../middlewares/authMiddleware");
 router.get('/viewtable' ,authMiddleware.authMiddleware, restaurantController.viewTable);
 router.get('/menu' ,authMiddleware.authMiddleware , restaurantController.addMenuItems);
 router.post('/menu' ,authMiddleware.authMiddleware , restaurantController.addMenuItems);
+router.get("/viewOrders" , restaurantController.viewOrders);
 
 
 module.exports = router;

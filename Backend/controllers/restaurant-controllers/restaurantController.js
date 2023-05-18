@@ -5,7 +5,6 @@ const orderDetail = require("../../models/order-details");
 
 
 // View orders on particular table
-
 exports.viewTable = async (req, res) => {
   var table_no = 2;
 
@@ -55,3 +54,20 @@ exports.addMenuItems = async (req, res) => {
   // Render restaurant view
   res.render("updateMenu");
 };
+
+// View all previous orders
+
+exports.viewOrders = async (req,res) => {
+
+    const restaurantId = await Usermodel.findOne( {username : "Ruturaj"})
+    console.log(restaurantId._id)
+    
+    var orders = await orderDetail.find({restaurantId: restaurantId._id , status: 'Pending'});
+
+     res.render("orderHistory" ,{orders : orders} );
+   
+
+
+    
+};
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/orderHistory.css">
+    <title>Order History</title>
+  </head>
+  <body>
+    <div class="me">
+   <center><h1>Order History</h1></center> 
+    <div class="app">
+        <table>
+            
+            <tr>
+                <th>Order Id</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            <% orders.forEach(order => { %>
+            <tr>
+                <td><%=order._id%></td>
+                <td>Rs.<%=order.amount%></td>
+                <td>19/10/22</td>
+            </tr>
+         <% }) %>
+            <tr>
+                <td>Order_dsjsvhd</td>
+                <td>900</td>
+                <td>19/10/22</td>
+            </tr>
+            <tr>
+                <td>Order_dsjsvhd</td>
+                <td>900</td>
+                <td>19/10/22</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+  </body>
+</html>

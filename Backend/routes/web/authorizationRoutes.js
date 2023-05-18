@@ -16,7 +16,5 @@ router.post('/register', authorizationController.register)
 
 router.post('/login' , authorizationController.login);
 
-router.post('/menu' ,authMiddleware.authMiddleware, authorizationController.addMenuItems);
-
 module.exports = router;
 
