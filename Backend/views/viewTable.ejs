@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/viewTable.css">
+    <title>Table Orders</title>
+  </head>
+  <body>
+    <div class="main">
+    <div class="headline">
+        <img class="logo" alt="log" src="https://marketplace.canva.com/EAESMsqG9rI/3/0/1600w/canva-grey-%26-green-elegant-minimal-good-taste-food-restaurant-logo-jeSR74GRMC8.jpg" />
+        <div class="name">
+            <h1 class="name_m">SATVEEK RESTAURANT</h1>
+        </div>
+    </div>
+    <div class="table">
+        <div class="table1 rat">
+            <h3 class="table1_s be">Table 1</h3>
+            <% table1Orders.forEach((order) => { %>
+              <% order.menu.forEach((dish) => { %>
+                <p><%= dish.dish %></p>
+                <hr>
+              <% }); %>
+            <% }); %>
+          </div>
+        <div class="table1 rat">
+            <h3 class="table2_s be">Table 2</h3>
+            <% table2Orders.forEach((order) => { %>
+                <% order.menu.forEach((dish) => { %>
+                  <p><%= dish.dish %></p>
+                  <hr>
+                <% }); %>
+              <% }); %>
+        </div>
+        <div class="table1 rat">
+            <h3 class="table3_s be">Table 3</h3>
+            <% table3Orders.forEach((order) => { %>
+                <% order.menu.forEach((dish) => { %>
+                  <p><%= dish.dish %></p>
+                  <hr>
+                <% }); %>
+              <% }); %>
+        </div>
+        <div class="table1 rat">
+            <h3 class="table4_s be">Table 4</h3>
+            <% table4Orders.forEach((order) => { %>
+                <% order.menu.forEach((dish) => { %>
+                  <p><%= dish.dish %></p>
+                  <hr>
+                <% }); %>
+              <% }); %>
+        </div>
+    </div>
+    <button class="btn btn1">Completed</button>
+    <button class="btn btn2">Completed</button>
+    <button class="btn btn3">Completed</button>
+    <button class="btn btn4">Completed</button>
+</div>
+  </body>
+</html>

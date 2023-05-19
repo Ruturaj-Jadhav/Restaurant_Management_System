@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrderMe</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/menu.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+</head>
+
+<body>
+  <div class="home">
+    <div class="cart-button">
+     <a href="/cart/checkout" <button class="view-cart-btn">View Cart</button> </a>
+    </div>
+    <div class="content">
+      <p class="main">Recommended dishes by restaurant</p>
+    </div>
+
+    <div class="content" id="main_course">
+      <p>MainCourse</p>
+    </div>
+
+
+    <% dishs.forEach(dish => { %>
+    <div class="food1 content" id="order">
+      <p class="one egg"><%=dish.dish%></p>
+      <div class="one1 price1">
+        <p>Rs.<%=dish.price%></p>
+      </div>
+    </div>
+    <% }) %>
+    
+  </div>
+</body>
+
+</html>

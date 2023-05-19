@@ -14,22 +14,36 @@ exports.viewTable = async (req, res) => {
   });
 
   // Get all the menu items whose status is pending for the particular table number
-  var orderItems = await orderDetail.find({
+  var ordersTable1 = await orderDetail.find({
+    restaurantId: restaurantId.id,
+    status: "Pending",
+    table_no: 1,
+  });
+  
+  var ordersTable2 = await orderDetail.find({
     restaurantId: restaurantId.id,
     status: "Pending",
     table_no: 2,
   });
 
-  // Render the menu items
-  orderItems.forEach((order) => {
-    order.menu.forEach((dish) => {
-      console.log(dish.dish);
-    });
+  var ordersTable3 = await orderDetail.find({
+    restaurantId: restaurantId.id,
+    status: "Pending",
+    table_no: 3,
   });
+  var ordersTable4 = await orderDetail.find({
+    restaurantId: restaurantId.id,
+    status: "Pending",
+    table_no: 4,
+  });
+
+  // Render the menu items
+
+  res.render("viewTable" , {table1Orders : ordersTable1, table2Orders : ordersTable2, table3Orders : ordersTable3, table4Orders: ordersTable4});
 };
 
 // Render Update Menu Page
-exports.addMenuItems = (req, res) => {
+exports.renderMenu = (req, res) => {
   res.render("updateMenu");
 };
 
@@ -38,7 +52,7 @@ exports.addMenuItems = async (req, res) => {
   var item = req.body.dishh;
   var price = req.body.price;
   // Find and update menu items for selected restaurant
-
+  
   await Usermodel.findOneAndUpdate(
     { username: req.user.username },
     {
@@ -56,7 +70,6 @@ exports.addMenuItems = async (req, res) => {
 };
 
 // View all previous orders
-
 exports.viewOrders = async (req,res) => {
 
     const restaurantId = await Usermodel.findOne( {username : "Ruturaj"})
@@ -64,10 +77,17 @@ exports.viewOrders = async (req,res) => {
     
     var orders = await orderDetail.find({restaurantId: restaurantId._id , status: 'Pending'});
 
-     res.render("orderHistory" ,{orders : orders} );
+    res.render("orderHistory" ,{orders : orders} );
    
-
-
-    
 };
+
+exports.menu = async (req,res) => {
+    // Search for restaurant
+    var items = await Usermodel.findOne({ username: req.user.username });
+
+    // Render menu items of the given restaurant
+    res.render("viewMenu", { dishs: items.menu, prices: items.menu });
+  }
+
+
 
