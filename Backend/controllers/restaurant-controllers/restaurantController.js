@@ -87,7 +87,7 @@ exports.menu = async (req,res) => {
 
     // Render menu items of the given restaurant
     res.render("viewMenu", { dishs: items.menu, prices: items.menu });
-  }
+};
 
 
 
