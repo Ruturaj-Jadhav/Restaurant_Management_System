@@ -1,59 +1,102 @@
-.body {
-  background-color:blanchedalmond ;
-}
-.card {
-  margin-top: 20px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: white;
+body{
+  padding: 0;
+  margin: 0;
+  
 }
 
-.card-header {
-  background-color: #22527b;
+.main{
+  display: flex;
+}
+
+.main>.show>h1{
+  margin: 80px auto 0px auto;
+  font-size: 60px;
+  /* margin: 10px; */
+}
+
+.main>.show>.order_me{
+  background-color: rgb(245, 238, 238);
+  width: 450px;
+  border: 2px solid gray;
+   flex-direction: column;
+   margin-top: 50px;
+  margin-left: 60px;
+  display: flex;
+  height: 310px;
+  border-radius: 10px;
+  /* margin-top: -130px; */
+}
+
+.main>.show>.order_me>.order_id{
+  display: flex;
+  /* margin: auto; */
+}
+
+.main>.show>.order_me>.order_id>h3{
+  width: 30%;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.main>.show>.order_me>.order_id>.order_para{
+  width:70%;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.main>.show>.order_me>.currency{
+  display: flex;
+  /* margin: auto; */
+}
+
+.main>.show>.order_me>.currency>h3{
+  width: 30%;
+  margin-left: 40px;
+  margin-top: 25px;
+  font-size: 25px;
+}
+
+.main>.show>.order_me>.currency>.curry{
+   width:70%;
+   margin-top: 25px;
+   font-size: 20px;
+}
+
+.main>.show>.order_me>.amount{
+  display: flex;
+  /* margin: auto; */
+}
+
+.main>.show>.order_me>.amount>h3{
+  width: 30%;
+  margin-left: 40px;
+  margin-top: 25px;
+  font-size: 25px;
+}
+
+.main>.show>.order_me>.amount>.money{
+   width:70%;
+   margin-top: 25px;
+   font-size: 20px;
+}
+
+.main>.show>.order_me>.btn{
+  display: flex;
+  margin: auto;
+  padding: 11px 20px;
+  font-size: 15px;
+  border-radius: 7px;
+  /* font-weight: bold; */
+  border: 2px solid white;
+  background-color: rgb(4, 115, 4);
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 20px;
-  border-radius: 10px 10px 0 0;
 }
 
-.card-body {
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.5;
+.main>.show>.order_me>.btn:hover{
+  cursor: pointer;
+  background-color: rgb(2, 67, 2);
 }
 
-.card-text {
-  margin-bottom: 10px;
-}
 
-.row {
-  margin-bottom: 20px;
-}
 
-.dt {
-  font-weight: bold;
-  color: #22527b;
-}
-
-.dd {
-  margin-left: 0;
-}
-
-.btn-primary {
-  background-color: #22527b;
-  border-color: #22527b;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.btn-primary:hover {
-  background-color: #1a3e5b;
-  border-color: #1a3e5b;
-}
-
-input[type="hidden"] {
-  display: none;
-}

@@ -1,33 +1,38 @@
-<div class="row d-flex justify-content-center">
-	<div class="col-sm-10 col-md-8 col-lg-5">
-		<div class="card">
-			<h5 class="card-header">Confirm Order</h5>
 
-			<div class="card-body">
-				<p class="card-text">Thank you for taking up this decision.</p>
-
-				<dl class="row mt-2">
-					<dt class="col-sm-3">Order ID</dt>
-					<dd class="col-sm-9" id="orderId"><%- paymentDetail.orderId %>  </dd>
-			
-					<dt class="col-sm-3">Currency</dt>
-					<dd class="col-sm-9"><%- paymentDetail.currency %>  </dd>
-										
-					<dt class="col-sm-3">Amount</dt>
-					<dd class="col-sm-9"><%- paymentDetail.amount/100 %> Rs. </dd>
-				</dl>
-
-				<button type="submit" class="btn btn-primary" onclick="checkout(event)">Checkout</button>
-			</div>
-		</div>
-		<form id="paymentVerifyForm" action="/payment/verify" method="POST">
-			<input name="razorpay_payment_id" type="hidden" id="razorpay_payment_id" />
-			<input name="razorpay_order_id" type="hidden" id="razorpay_order_id"/>
-			<input name="razorpay_signature" type="hidden" id="razorpay_signature"/>
-		</form>
-	</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="/css/checkout.css">
+    <title>Checkout</title>
+  </head>
+  <body>
+    <div class="main">
+    <img src="https://img.freepik.com/free-vector/waiter-serving-silver-dish-with-lid-customer_3446-90.jpg?w=740&t=st=1683927730~exp=1683928330~hmac=dc6b6a07e53b5a9b79ab3be8447d2271da2298874f601e6f9a996a2a5bb9fe42" />
+    <div class="show">
+        <h1>Thank for taking this decision!!!</h1>
+        <div class="order_me">
+            <div class="order_id">
+                <h3>Order id:</h3>
+                <p class="order_para"><%- paymentDetail.orderId %> </p>
+            </div>
+            <div class="currency">
+                <h3>Currency:</h3>
+                <p class="curry">INR</p>
+            </div>
+            <div class="amount">
+                <h3>Amount:</h3>
+                <p class="money">Rs.<%- paymentDetail.amount/100 %></p>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="checkout(event)">Checkout</button>
+        </div>
+    </div>
+	<form id="paymentVerifyForm" action="/payment/verify" method="POST">
+		<input name="razorpay_payment_id" type="hidden" id="razorpay_payment_id" />
+		<input name="razorpay_order_id" type="hidden" id="razorpay_order_id"/>
+		<input name="razorpay_signature" type="hidden" id="razorpay_signature"/>
+	</form>
 </div>
-
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 	function checkout(event) {
@@ -36,7 +41,7 @@
 		const options = {
 			"key": razorpayKeyId,
 			"currency": "INR",
-			"name": "Restaurant Management System",
+			"name": "Restaurant Management",
 			"description": "Razor Test Transaction",
 			"image": "https://previews.123rf.com/images/subhanbaghirov/subhanbaghirov1605/subhanbaghirov160500087/56875269-vector-light-bulb-icon-with-concept-of-idea-brainstorming-idea-illustration-.jpg",
 			"order_id": JSON.parse(orderId),
@@ -60,3 +65,6 @@
 		event.preventDefault();
 	}
 </script>
+  </body>
+</html>
+
