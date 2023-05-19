@@ -1,30 +1,41 @@
-<div class="row d-flex justify-content-center">
-	<div class="col-md-8">
-		<div class="card">
-			<h5 class="card-header">Payment Successful!</h5>
 
-			<div class="card-body">
-				<p class="card-text">Thank you for contributing to us. Uparwala tumhara bhala kare.</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/paymentSuccess.css">
+    <title>Payment Success</title>
+  </head>
+  <body>
+    <div class="main">
+        <div class="container">
+            <div class="mid_cont">
+                <div class="logo">
+                    <img class="right" alt="logo" src="https://img.freepik.com/free-vector/green-eco-loop-leaf-check-mark_78370-658.jpg?w=740&t=st=1683593968~exp=1683594568~hmac=6e720f41b12f5867133b497bd795f5a4ea8c10ab447e3fb572d225a3fdd7ee1b" />
+                    <div class="succ">
+                        <h1>Payment Successful!</h1>
+                    </div>
+                    
+                </div>
+                <div class="order_id">
+                    <h4 class="order_id_i">Order id:</h4>
+                    <p><%- paymentDetail.orderId %>   </p>
+                </div>
+                <div class="time">
+                    <h4 class="venue">Time:</h4>
+                    <p><%- paymentDetail.createdAt %> </p>
+                </div>
+                <div class="amount">
+                    <h4 class="money">Amount:</h4>
+                    <p>Rs.<%- paymentDetail.amount/100 %></p>
+                </div>
+            </div>
+            <a href="/" type="button" class="btn btn-primary">Go Home</a>
+        </div>
+        <div class="vector">
+            <img class="right" alt="logo" src="https://img.freepik.com/free-vector/e-wallet-concept-illustration_114360-7561.jpg?w=740&t=st=1683592491~exp=1683593091~hmac=e29b77fa82cb3ae72228d24ec55eb4845fc08a25c701bba0fbb0ee0038fd05af" />
+        </div>
+    </div>
 
-				<dl class="row mt-2">
-					<dt class="col-sm-3">Order ID</dt>
-					<dd class="col-sm-9" id="orderId"><%- paymentDetail.orderId %>  </dd>
-										
-					<dt class="col-sm-3">Transaction ID</dt>
-					<dd class="col-sm-9" id="orderId"><%- paymentDetail.paymentId %>  </dd>
-
-					<dt class="col-sm-3">Signature</dt>
-					<dd class="col-sm-9" id="orderId"><%- paymentDetail.signature %>  </dd>
-
-					<dt class="col-sm-3">Amount</dt>
-					<dd class="col-sm-9"><%- paymentDetail.amount/100 %> Rs. </dd>
-
-					<dt class="col-sm-3">Created at</dt>
-					<dd class="col-sm-9"><%- paymentDetail.createdAt %> </dd>
-				</dl>
-
-				<a href="/" type="button" class="btn btn-primary">Go Home</a>
-			</div>
-		</div>
-	</div>
-</div>
+  </body>
+</html>
