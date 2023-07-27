@@ -1,0 +1,27 @@
+version: "3"
+services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"  # Map the host port to the container port
+    environment:
+      - PORT=YOUR_PORT_NUMBER
+      - RAZORPAY_KEY_ID= YOUR_RAZORPAY_ID
+      - RAZORPAY_KEY_SECRET=YOUR_RAZORPAY_SECRET
+      - JWT_SECRET=YOUR_JWT_SECRET
+      - DATABASE_URL=mongodb://database:27017/DATABASE_NAME?directConnection=true
+      - NODE_ENV=production
+
+    depends_on:
+      - database
+
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # Map the host port to the container port
+    volumes:
+      - mongo_data:/data/db  # Persist MongoDB data outside the container
+
+volumes:
+  mongo_data:
+
