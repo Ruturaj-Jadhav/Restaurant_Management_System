@@ -18,13 +18,7 @@ To set up the project locally, please follow these steps:
    cd Restaurant_Management_System
    ```
 
-3. Install the dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Create a `.env` file in the root directory and add the necessary secret keys and configuration values. Make sure to include the required information such as database credentials and other sensitive data.
+3. Update Docker-compose file
    ```bash
    NODE_ENV='production'
    PORT="PORT i.e 8000"
@@ -33,29 +27,33 @@ To set up the project locally, please follow these steps:
    JWT_SECRET = "YOUR_JWT_SECRET"
    DATABASE_URL="mongodb://127.0.0.1:27017/"DATABASE_NAME"?directConnection=true"
    ```
-## Usage
-
-1. Start the application using the following command:
-
-   ```bash
-   nodemon app.js
+   
+4. Run Docker-compose build command
+  ```bash
+   sudo Docker-compose build
    ```
 
-2. Access the application in your web browser by navigating to `http://localhost:8000`.
+5. Run Docker-compose up command
+ ```bash
+   sudo Docker-compose up
+   ```
+## Usage
 
-3. Restaurants can create an account and log in to manage their menu. They can add dishes, specify details such as the name, description, and price.
+1. Access the application in your web browser by navigating to `http://localhost:8000`.
 
-4. Once the menu is set up, restaurants can generate a unique QR code for each table in their establishment.
+2. Restaurants can create an account and log in to manage their menu. They can add dishes, specify details such as the name, description, and price.
 
-5. Customers can visit the restaurant and scan the QR code using their smartphone's QR code scanner. The menu items will be displayed on their device.
+3. Once the menu is set up, restaurants can generate a unique QR code for each table in their establishment.
 
-6. Customers can browse the menu, add items to their cart, and proceed to the checkout process.
+4. Customers can visit the restaurant and scan the QR code using their smartphone's QR code scanner. The menu items will be displayed on their device.
 
-7. Upon checkout, customers will be prompted to make a payment for their order.
+5. Customers can browse the menu, add items to their cart, and proceed to the checkout process.
 
-8. Restaurants can view the orders placed on each table and mark their status as complete or pending.
+6. Upon checkout, customers will be prompted to make a payment for their order.
 
-9. Restaurants can also access a history of previous orders, allowing them to track and manage their order fulfillment process efficiently.
+7. Restaurants can view the orders placed on each table and mark their status as complete or pending.
+
+8. Restaurants can also access a history of previous orders, allowing them to track and manage their order fulfillment process efficiently.
 
 ## Technologies Used
 
@@ -63,6 +61,7 @@ To set up the project locally, please follow these steps:
 - MongoDB: Database management system
 - EJS: Templating engine for generating dynamic HTML
 - CSS: Styling the frontend
+- Docker : For Containerizing the project
 
 
 
