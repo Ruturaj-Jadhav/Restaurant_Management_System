@@ -6,15 +6,15 @@ var router = express.Router();
 
 // Routes
 
-router.get('/' , authorizationController.homePage);
+router.get('/' ,authMiddleware.redirectIfAuthenticated, authorizationController.homePage);
 
-router.get('/register' , authorizationController.registerPage);
+router.get('/register' ,authMiddleware.redirectIfAuthenticated, authorizationController.registerPage);
 
-router.get('/login', authorizationController.loginPage);
+router.get('/login',authMiddleware.redirectIfAuthenticated, authorizationController.loginPage);
 
-router.post('/register', authorizationController.register)
+router.post('/register',authMiddleware.redirectIfAuthenticated, authorizationController.register)
 
-router.post('/login' , authorizationController.login);
+router.post('/login' ,authMiddleware.redirectIfAuthenticated,authorizationController.login);
 
 module.exports = router;
 

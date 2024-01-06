@@ -21,3 +21,21 @@ exports.authMiddleware = async (req, res, next) => {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 };
+
+
+exports.redirectIfAuthenticated = async (req, res, next) => {
+  const token = localStorage.get('jwt');
+  if (!token) {
+    next();
+  } else {
+    try {
+      if (jwt.verify(token, JWT_SECRET)) {
+        return res.redirect('/restaurant/restaurantHomePage');
+      }
+    } catch (err) {
+      console.error(err);
+      next();
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  }
+};

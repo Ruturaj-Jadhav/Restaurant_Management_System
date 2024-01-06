@@ -84,10 +84,19 @@ exports.login = async (req, res) => {
     localStorage.set("jwt", token);
 
     // Render restaurant view
-    res.render("restaurantHomePage");
+    res.redirect("/restaurant/restaurantHomePage");
   } else {
     res.json({ status: "error", error: "Invalid Password" });
   }
 };
+
+
+
+
+
+// exports.logout = async(req,res) => {
+//   localStorage.remove("jwt");
+//   res.redirect("/restaurant/login");
+// }
 
 
