@@ -90,13 +90,9 @@ exports.login = async (req, res) => {
   }
 };
 
-
-
-
-
-// exports.logout = async(req,res) => {
-//   localStorage.remove("jwt");
-//   res.redirect("/restaurant/login");
-// }
+exports.logout = async(req,res) => {
+  localStorage.remove("jwt");
+  res.redirect("/restaurant/login");
+}
 
 
